@@ -425,3 +425,6 @@ contract CCP {
         return appVars.creatorRating[_creator];
     }
 }
+
+
+//this is a simple comment
