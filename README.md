@@ -2,7 +2,7 @@
 
 ## Overview 🚀
 
-The Referral Smart Contract is a decentralized referral system built on Ethereum. It allows users to register with a referrer, earn rewards for referrals, and progress through levels based on their referral activity. The contract ensures fairness, enforces limits on referrals, and provides a seamless process for managing earnings and leveling up.
+The Referral Smart Contract is a decentralized referral system built on Lisk. It allows users to register with a referrer, earn rewards for referrals, and progress through levels based on their referral activity. The contract ensures fairness, enforces limits on referrals, and provides a seamless process for managing earnings and leveling up.
 
 ---
 
