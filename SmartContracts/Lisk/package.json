@@ -1,7 +1,7 @@
 {
-  "name": "axk-ledger-lisk-api",
+  "name": "agro-africa-lisk-api",
   "version": "1.0.0",
-  "description": "Aspects of AXK ledger",
+  "description": "AgroAfrica Produce traceability and Supply Chain Smart Contracts",
   "main": "hardhat.config.js",
   "directories": {
     "test": "test"
@@ -10,7 +10,7 @@
     "test": "npx hardhat compile"
   },
   "keywords": [],
-  "author": "[afrikabal][kelvin@afrikabal.org]",
+  "author": "[agroafrica][nderebakelvin@gmail.com]",
   "license": "MIT",
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2",
