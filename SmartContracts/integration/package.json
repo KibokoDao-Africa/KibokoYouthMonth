@@ -1,0 +1,37 @@
+{
+  "name": "agroafrica-smartcontract-web3-integration",
+  "version": "1.0.0",
+  "description": "An Api to enable Agro Africa Smart Contract calls from a node js application to the Ethereum network. Functions include user whitelisting, adding and updating agricultural products, buying and selling of produce, cryptocurrency payments, payment escrow management, order and shipment management, shipment tracking, and delivery confirmation. ",
+  "main": "users.js",
+  "scripts": {
+    "test": "pm2 start users.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/g_and_h-_blockchain_solutions/agroafricachain_solidity.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "Solidity",
+    "web3",
+    "nodejs",
+    "truffle",
+    "Agriculture",
+    "Blockchain"
+  ],
+  "author": "Kelvin Ndereba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/g_and_h-_blockchain_solutions/agroafricachain_solidity/issues"
+  },
+  "homepage": "https://gitlab.com/g_and_h-_blockchain_solutions/agroafricachain_solidity#readme",
+  "dependencies": {
+    "big-number": "^2.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ethereumjs-tx": "^2.1.2",
+    "web3": "^0.20.7",
+    "express": "^4.17.1"
+  }
+}

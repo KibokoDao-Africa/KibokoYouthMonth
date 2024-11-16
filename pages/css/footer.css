@@ -1,0 +1,53 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+footer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #676767;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.2;
+}
+
+footer .container {
+	border-top: 1px solid #676767;
+}
+
+footer .row {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+footer .column {
+	margin-bottom: 0;
+}
+
+footer p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+footer a {
+	color: #676767;
+	text-decoration: none;
+}
+
+@media all and (min-width: 800px) {
+	footer .row {
+		-webkit-box-align: inherit;
+		    -ms-flex-align: inherit;
+		        align-items: inherit;
+	}
+
+	footer .column {
+		text-align: left;
+	}
+}
+
+@media all and (min-width: 1200px) {
+	footer .column {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 1 25%;
+		        flex: 0 1 25%;
+	}
+}

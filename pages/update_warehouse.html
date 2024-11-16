@@ -1,0 +1,235 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="/images/favicon.ico">
+        <title>Update Warehouse | agro-africa</title>
+        <meta name="description" content="Agricultural produce directly from farmers">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/main.css" type="text/css">
+        <link rel="stylesheet" href="/styles/intlTelInput.css">
+    </head>
+    <body>
+
+        <!-- SVG symbols -->
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="search" viewBox="0 0 26 26">
+                <title>Search</title>
+                <path d="M2.2,10.9c0,4.8,3.9,8.8,8.8,8.8c4.8,0,8.8-3.9,8.8-8.7c0-4.9-3.9-8.8-8.8-8.8C6.1,2.2,2.2,6.1,2.2,10.9z
+                M19.4,17.9c0.1,0.1,0.2,0.1,0.3,0.2c2,2,3.9,3.9,5.9,5.9c0.3,0.3,0.5,0.7,0.4,1.2c-0.2,0.7-1.1,1-1.7,0.5c-0.1-0.1-0.2-0.1-0.2-0.2
+                c-2-1.9-3.9-3.9-5.8-5.8c-0.1-0.1-0.1-0.2-0.2-0.3C13.1,23.3,6.3,22.5,2.5,18C-1.1,13.6-0.8,7.2,3.3,3.1c4-4,10.5-4.2,14.8-0.5
+                C22.4,6.3,23.4,13,19.4,17.9z"/>
+            </symbol>
+
+            <symbol id="cart" viewBox="0 0 29.1 26">
+                <title>Cart</title>
+                <path d="M24,23.4c0-0.5-0.4-0.9-0.8-0.9s-0.9,0.4-0.9,0.9c0,0.5,0.4,0.9,0.8,0.9C23.6,24.3,24,23.9,24,23.4z M12,23.4
+                c0-0.5-0.4-0.9-0.9-0.9c-0.5,0-0.8,0.4-0.8,0.9c0,0.5,0.4,0.9,0.8,0.9C11.5,24.3,12,23.9,12,23.4z M27.1,5.2c-6.5,0-12.9,0-19.3,0
+                c0,0.1,0,0.1,0,0.1c0.7,3.3,1.5,6.6,2.2,10c0.1,0.2,0.1,0.3,0.4,0.3c4.5,0,9,0,13.6,0c0.2,0,0.3-0.1,0.4-0.3
+                c0.9-3.2,1.8-6.5,2.7-9.7C27.1,5.5,27.1,5.4,27.1,5.2z M10.7,20.8c-0.6,0-1.2,0.1-1.7,0c-1.1-0.1-1.9-1-2.1-2.1
+                c-0.2-1,0.3-2.1,1.3-2.7c0.1,0,0.1-0.1,0.2-0.1c-0.2-1.1-0.5-2.2-0.7-3.3C6.9,9,6.1,5.6,5.4,2.2C5.3,1.8,5.2,1.7,4.9,1.7
+                c-1.3,0-2.6,0-3.9,0c-0.4,0-0.7-0.1-0.8-0.4c-0.3-0.5,0-1.1,0.5-1.2C0.8,0,1,0,1.1,0c1.5,0,3.1,0,4.6,0c0.7,0,1,0.2,1.1,0.9
+                C7,1.7,7.2,2.4,7.3,3.1c0.1,0.3,0.2,0.4,0.4,0.4c6.8,0,13.5,0,20.2,0c0.4,0,0.7,0,0.9,0.4c0.2,0.3,0.2,0.6,0.1,0.9
+                C28,8.3,27,12,26,15.6c-0.1,0.4-0.2,0.7-0.3,1.1c-0.1,0.4-0.4,0.6-0.7,0.6c-0.2,0-0.3,0-0.5,0c-4.9,0-9.8,0-14.8,0
+                c-0.2,0-0.3,0-0.5,0c-0.4,0.1-0.7,0.4-0.8,0.8c0,0.4,0.3,0.8,0.7,0.9c0.1,0,0.3,0,0.5,0c5,0,9.9,0,14.9,0c0.1,0,0.2,0,0.3,0
+                c0.5,0,0.8,0.4,0.8,0.8c0,0.5-0.3,0.8-0.8,0.9c-0.4,0-0.9,0-1.4,0c1.6,0.4,2.4,1.6,2.2,3C25.5,25,24.4,26,23.1,26
+                c-1.3-0.1-2.4-1-2.5-2.3c-0.1-1.4,0.7-2.5,2.2-2.9c-3.8,0-7.6,0-11.4,0c0.7,0.1,1.2,0.4,1.6,1c0.4,0.6,0.6,1.2,0.5,1.9
+                C13.5,25,12.4,26,11.1,26c-1.3,0-2.4-1-2.5-2.4C8.4,22.3,9.3,21.1,10.7,20.8z"/>
+            </symbol>
+
+            <symbol id="account" viewBox="0 0 26 26">
+                <title>Account</title>
+                <path d="M21.5,20.6c-4.4-5.2-12.8-5.1-17.1,0C8.9,25.8,17.2,25.7,21.5,20.6z M3.5,19.4c2.6-2.7,5.8-4.1,9.5-4.1
+                c3.7,0,6.9,1.4,9.5,4.1c3-4.2,2.8-10.8-1.9-15C16,0.3,9.1,0.6,4.8,5C0.5,9.4,0.8,15.7,3.5,19.4z M13,26C5.8,26,0,20.1,0,12.9
+                C0,5.9,5.7,0,13,0c7.2,0,13,5.8,13,13.1C26,20.1,20.3,26,13,26z"/>
+                <path d="M16,8.4C16,8.4,16,8.4,16,8.4c0-0.3,0-0.5,0-0.8c0-1.5-1.2-2.9-2.6-3C11.8,4.5,10.3,5.4,10,7
+                C9.9,7.8,9.9,8.5,10,9.2c0,1.7,1.3,2.9,3,3c1.6,0.1,2.9-1.1,3.1-2.8C16.1,9.1,16,8.8,16,8.4z M17.6,8.4c0,0.8-0.1,1.7-0.4,2.5
+                c-0.7,1.8-2.6,3-4.6,2.9c-2-0.2-3.8-1.6-4.1-3.6C8.3,8.8,8.2,7.4,8.8,6c0.6-1.6,2.3-3.1,4.8-2.9c1.9,0.2,3.6,1.7,3.9,3.6
+                C17.6,7.3,17.6,7.9,17.6,8.4z"/>
+            </symbol>
+
+            <symbol id="arrow-right" viewBox="0 0 15 15">
+                <style type="text/css">
+                    .ar1{fill:none;stroke:white;stroke-miterlimit:10;}
+                </style>
+                <title>Arrow right</title>
+                <path d="M3.5,8h8V7h-8V8z M11.9,7.9c0.2-0.2,0.2-0.5,0-0.7L8.7,4C8.5,3.8,8.2,3.8,8,4S7.8,4.5,8,4.7l2.8,2.8L8,10.3
+                c-0.2,0.2-0.2,0.5,0,0.7c0.2,0.2,0.5,0.2,0.7,0L11.9,7.9z"/>
+                <circle class="ar1" cx="7.5" cy="7.5" r="7"/>
+            </symbol>
+
+            <symbol id="arrow-left" viewBox="0 0 15 15">
+                <style type="text/css">
+                    .al1{fill:none;stroke:black;stroke-miterlimit:10;}
+                </style>
+                <title>Arrow left</title>
+                <path d="M11.5,7h-8v1h8V7z M3.1,7.1c-0.2,0.2-0.2,0.5,0,0.7L6.3,11c0.2,0.2,0.5,0.2,0.7,0s0.2-0.5,0-0.7L4.2,7.5L7,4.7
+                C7.2,4.5,7.2,4.2,7,4S6.5,3.8,6.3,4L3.1,7.1z"/>
+                <circle class="al1" cx="7.5" cy="7.5" r="7"/>
+            </symbol>
+
+            <symbol id="arrow-down" viewBox="0 0 15 15">
+                <style type="text/css">
+                    .ad0{fill:none;stroke:black;stroke-miterlimit:10;}
+                </style>
+                <title>Arrow down</title>
+                <path d="M7,3.5v8h1v-8H7z M7.1,11.9c0.2,0.2,0.5,0.2,0.7,0L11,8.7c0.2-0.2,0.2-0.5,0-0.7s-0.5-0.2-0.7,0l-2.8,2.8L4.7,8
+                    C4.5,7.8,4.2,7.8,4,8S3.8,8.5,4,8.7L7.1,11.9z"/>
+                <circle class="ad0" cx="7.5" cy="7.5" r="7"/>
+            </symbol>
+        </svg>
+
+        <!-- Navigation -->
+
+        <nav class="nav">
+            <div class="container">
+                <ul>
+                    <li class="logo"><a href="/admin.html"><img src="/images/logo.svg" alt="logo"></a></li>
+                    <li class="toggle"><a href="" aria-label="toggle menu">
+                        <svg class="toggle-open" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                        <svg class="toggle-close" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                        </svg>
+                    </a></li>
+                  <!--  <li class="item"><a href="/add_category.html">Products</a></li>
+                    <li class="item current"><a href="/add_warehouse.html">WareHouse</a></li>
+                    <li class="item"><a href="/admin_orders.html">Orders</a></li>
+                    <li class="item"><a href="/admin_shipments.html">Shipments</a></li> -->
+                    <li class="item"><a href="#" aria-label="search"><svg class="search"><use xlink:href="#search"/></svg></a></li>
+                    <li class="item dropdown">
+                        <a href="#" aria-label="account">
+                            <svg class="account"><use xlink:href="#account"/></svg>
+                        </a>
+                        <div class="sub-nav">
+                            <hr class="seperator">
+                            <div class="sub-item">
+                                <a href="#"id="name">Username</a>
+                            </div>
+                            <div class="sub-item">
+                                <a href="#">View profile</a>
+                            </div>
+                            <div class="sub-item">
+                                <a href="#">Settings</a>
+                            </div>
+                            <hr>
+                            <div class="sub-item">
+                                <a href="/index.html" id="logout">Sign Out</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section>
+          <div class="container" style="background-color:white;">  <h3 class="text-white">Create a New Warehouse</h3>
+            <div class="row">
+            <div class="column">
+            <form class="form">
+              <div class="form-group">
+                <input type="text" id="warehouse_name" name="warehouse_name" placeholder="Warehouse Name:" autofocus aria-label="Warehouse Name" required>
+              </div>
+              <div class="form-group">
+                  <label> Warehouse Picture </label>
+                  <input type="file" id="fileUpload" />
+              </div>
+              <div class="form-group">
+                <input type="hidden" id="picture" name="picture" value="">
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email:" aria-label="Email" required>
+              </div>
+              <div class="form-group">
+                <input id="phone" name="phone" type="tel" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="street" name="street" placeholder="Street:" aria-label="Street" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="city" name="city" placeholder="City Name:" aria-label="City Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="zipcode" name="zipcode" placeholder="zip code:" aria-label="Zip Code" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="state" name="state" placeholder="State:" aria-label="State Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text-area" id="about"  name="about" placeholder="About us:" aria-label="About us">
+              </div>
+              <div>  <p><span style="color:red" id="placement_error_log"></span></p> </div>
+              <input class="btn btn-yellow" type="submit" id="updateWarehouse" value="Update Warehouse">
+            </form>
+          </div>
+        </div>
+          </div>
+          </section>
+          <footer>
+            <div class="container">
+              <div class="row">
+                <div class="column">
+                  <p><strong>agro-africa Uganda Office</strong></p>
+                  <p>Conrad House, Ground Floor</p>
+                  <p> Plot 30, Opposite Shell Jinja Road </p>
+                  <p><strong>TEL :</strong>+256 414 230395</p>
+                  <p><strong>MOB :</strong>+256 772 348 888</p>
+                  <!-- <p><strong>E-MAIL :</strong> info@agro-africa.ug</p> -->
+                </div>
+                <div class="column">
+                  <p><strong>agro-africa Rwanda Office</strong></p>
+                  <p>KG 19 Avenue, No. 80</p>
+                  <p>2nd Floor Kibagabaga, Kigali, Rwanda </p>
+                  <p><strong>TEL :</strong>+256 414 230395</p>
+                  <p><strong>MOB :</strong>+256 772 348 888</p>
+                  <!-- <p><strong>E-MAIL :</strong> info@agro-africa.ug</p> -->
+                </div>
+                <div class="column">
+                  <p><strong>agro-africa Kenya Office</strong></p>
+                  <p>Sharaf House, 2nd Floor</p>
+                  <p>Archbishop Makarios Rd</p>
+                  <p>Off Moi Avenue, Mombasa Kenya </p>
+                  <p><strong>TEL :</strong>+254 797 744587</p>
+                  <!-- <p><strong>MOB :</strong>+254 797 744587</p> -->
+                  <!-- <p><strong>E-MAIL :</strong> info@agro-africa.ug</p> -->
+                </div>
+                <div class="column">
+                  <p><strong>agro-africa Ethiopia Office</strong></p>
+                  <p> Bole K/K, Addis Ababa, Ethiopia</p>
+                  <p><strong>TEL :</strong>+251 94 824 9428 / +251 94 473 4800</p>
+                  <p><strong>MOB :</strong>+251 93 051 8051</p>
+                  <!-- <p><strong>E-MAIL :</strong> info@agro-africa.ug</p> -->
+                </div>
+              </div>
+            </div>
+          </footer>
+
+                <script src="/scripts/jquery-3.2.1.min.js"></script>
+                <script src="/scripts/navigation.js"></script>
+                <script src="/scripts/tabs.js"></script>
+                <script src="/scripts/product.js"></script>
+                <script src="/scripts/update_warehouse.js"></script>
+                <script src="/scripts/intlTelInput.js"></script>
+                 <script>
+                   var input = document.querySelector("#phone");
+                   window.intlTelInput(input, {
+                     hiddenInput: "full_number",
+                     initialCountry: "auto",
+                     geoIpLookup: function(callback) {
+                    $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                      var countryCode = (resp && resp.country) ? resp.country : "";
+                      callback(countryCode);
+                       });
+                     },
+                     onlyCountries: ['ke', 'et', 'ug', 'tz'],
+                     separateDialCode: true,
+                     utilsScript: "/scripts/utils.js",
+                   });
+                 </script>
+            </body>
+        </html>

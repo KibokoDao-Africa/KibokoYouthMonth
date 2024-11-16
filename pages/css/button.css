@@ -1,0 +1,76 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.btn {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding: 10px 40px;
+	background-color: #2e8e2e;
+	border: 1px solid #2e8e2e;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: all .4s;
+	-o-transition: all .4s;
+	transition: all .4s;
+	vertical-align: middle;
+}
+
+.btn:hover {
+	background-color: white;
+	border-color: #2e8e2e;
+	color: #2e8e2e;
+}
+
+.btn.btn-red {
+	background-color: #ff0000;
+	border-color: #ff0000;	
+}
+
+.btn.btn-red:hover {
+	background-color: white;
+	color: #ff0000;
+}
+
+.btn.btn-blue {
+	background-color: #0187fb;
+	border-color: #0187fb;
+	border-radius: 30px;
+}
+
+.btn.btn-blue:hover {
+	background-color: white;
+	color: #0187fb;
+}
+
+.btn.btn-yellow {
+	background-color: #ffe500;
+	border-color: #ffe500;
+	border-radius: 30px;
+	color: #2e8e2e;
+}
+
+.btn.btn-yellow:hover {
+	background-color: white;
+}
+
+.btn.btn-grey {
+	background-color: #f2f2f2;
+	border-color: #f2f2f2;	
+	color: #9a9a9a;
+}
+
+.btn.btn-grey:hover {
+	background-color: #2e8e2e;
+	border-color: #2e8e2e;
+	color: white;
+}

@@ -1,0 +1,36 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.breadcrumb ul {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0;
+    padding: 0 5px;
+}
+
+.breadcrumb a {
+    color: #9a9a9a;
+    text-decoration: none;
+}
+
+.breadcrumb a, .breadcrumb span {
+    padding: 0 7px;
+}
+
+.breadcrumb li::before {
+    content: "/";
+    color: #9a9a9a;
+}
+
+.breadcrumb li:nth-of-type(1)::before, .breadcrumb li:nth-of-type(2)::before  {
+    content: "";
+}
+
+.breadcrumb svg {
+    width: 25px;
+    height: 25px;
+    fill: black;
+}

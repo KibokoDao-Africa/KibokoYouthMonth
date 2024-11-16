@@ -1,0 +1,141 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.payments {
+	margin: 10px;
+	padding: 25px;
+	background-color: white;
+}
+
+.payments table {
+	border-collapse: collapse;
+	border-style: hidden;
+}
+
+.payments th, .payments td {
+	padding: 5px;
+	border: 1px solid #9a9a9a;
+}
+
+.payments td.bg-green {
+	background-color: rgba(46, 142, 46, 0.1);
+}
+
+.payments .text-green {
+	margin: 0;
+	color: #2e8e2e;
+	font-weight: bold;
+}
+
+.payments .order {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	color: #9a9a9a;
+	line-height: 1.2;
+}
+
+.payments .order p {
+	-ms-flex-item-align: stretch;
+	    -ms-grid-row-align: stretch;
+	    align-self: stretch;
+	border-right: 1px solid #9a9a9a;
+	padding: 0 10px;
+}
+
+.payments .order p:first-of-type {
+	padding-left: 0;
+}
+
+.payments .order p:last-of-type {
+	border-right: none;
+}
+
+.payments .order strong {
+	font-size: 18px;
+}
+
+.payments .payment img {
+	width: auto;
+	height: 30px;
+}
+
+.payments .small-text {
+	margin: 0;
+}
+
+.payments .bitcoin .qr-code {
+	margin-bottom: 20px;
+	width: 120px;
+	height: auto;
+}
+
+.payments .bitcoin form {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+
+.payments .bitcoin form .form-footer div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	margin-bottom: 10px;
+}
+
+.payments .bitcoin form .form-footer img {
+	width: auto;
+	height: 25px;
+	margin-right: 10px;
+}
+
+@media all and (min-width: 800px) {
+	.payments .bitcoin {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+	}
+
+	.payments .bitcoin .qr-code {
+		margin-right: 20px;
+		width: 200px;
+		height: auto;
+	}
+
+	.payments .bitcoin form .form-footer {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+
+	.payments .bitcoin form .form-footer div {
+		margin-bottom: inherit;
+	}
+}
+
+@media all and (min-width: 1200px) {
+	.payments {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+
+	.payments .column:first-of-type {
+		border-right: 1px solid #9a9a9a;
+		padding-right: 20px;
+	}
+}

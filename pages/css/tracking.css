@@ -1,0 +1,143 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.tracking {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin: 10px;
+}
+
+.tracking .map {
+	height: 400px;
+}
+
+.tracking .btn {
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+/*Sidebar*/
+
+.tracking .sidebar {
+	background-color: #e5e5e5;
+	margin-bottom: 25px;
+}
+
+.tracking .sidebar-title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 60px;
+	padding: 20px;
+	background-color: #2e8e2e;
+}
+
+.tracking .sidebar-title h2 {
+	margin: 0;
+	color: white;
+}
+
+.tracking .sidebar-detail {
+	padding: 0 20px 20px;
+	line-height: 1.2;
+}
+
+.tracking .sidebar-detail > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.tracking .sidebar-detail > div:last-of-type {
+	margin-bottom: 10px;
+}
+
+.tracking .sidebar-detail > div > * {
+	-ms-flex-preferred-size: 48%;
+	    flex-basis: 48%;
+}
+
+.tracking .sidebar-detail > div p {
+	margin: 0;
+}
+
+.tracking .sidebar-detail p strong {
+	color: #2e8e2e;
+}
+
+.tracking .sidebar-detail hr {
+	margin: 0;
+	border-top: 1px solid #676767;
+}
+
+.tracking .sidebar-detail .small-text {
+	color: #676767;
+	font-size: 14px;
+}
+
+.tracking .sidebar-detail .btn {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-right: 0;
+}
+
+@media all and (min-width: 800px) {
+	.tracking {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+	}
+
+	.tracking .map {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2 1 60%;
+		        flex: 2 1 60%;
+		height: auto;
+	}
+
+	.tracking .sidebar {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 40%;
+		        flex: 1 1 40%;
+		margin-right: 25px;
+		margin-bottom: 0;
+	}
+}
+
+@media all and (min-width: 1200px) {
+	.tracking .map {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2 1 70%;
+		        flex: 2 1 70%;
+	}
+
+	.tracking .btn {
+		margin-bottom: 0;
+	}
+
+	.tracking .sidebar {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 30%;
+		        flex: 1 1 30%;
+	}
+}
