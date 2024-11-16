@@ -1,180 +1,94 @@
+# Referral Smart Contract
 
-# Hackathon Project Submission Guide 🚀
+## Overview 🚀
 
-Welcome, Hackathon Participants! 🎉 This guide will walk you through the process of submitting your project to this repository using GitHub. We will cover everything from forking the repository to creating a pull request (PR). Follow these steps carefully to ensure your submission is successful and free of dependency issues.
-
----
-
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following:
-- A GitHub account.
-- Git installed on your local machine.
-- Node.js and npm installed (if applicable for your project).
-- Basic understanding of Git and GitHub.
+The Referral Smart Contract is a decentralized referral system built on Ethereum. It allows users to register with a referrer, earn rewards for referrals, and progress through levels based on their referral activity. The contract ensures fairness, enforces limits on referrals, and provides a seamless process for managing earnings and leveling up.
 
 ---
 
-## 🚀 Step 1: Fork the Repository
+## 📋 Features
 
-1. **Fork this repository**:
-   - Click on the "Fork" button at the top right corner of this repository page.
-   - This will create a copy of this repository under your GitHub account.
+1. Registration with Referral:
 
-2. **Clone your forked repository**:
-   ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
-   ```
-   Replace `<your-username>` with your GitHub username.
+Users can register with a valid referrer address.
+Referrers can earn rewards for each successful registration they facilitate.
 
-3. **Navigate into the cloned directory**:
-   ```bash
-   cd <repository-name>
-   ```
+2. Referral System:
 
----
+Supports tracking of direct and second-level referrals.
+Limits referrers to a maximum of 9 referrals at a time.
 
-## 🔄 Step 2: Set Upstream Repository
+3. Leveling Up:
 
-To keep your fork in sync with the original repository:
+Users can progress through levels by referring 9 people and paying a level-up fee.
+Maximum level is capped at 10.
 
-1. **Add the original repository as an upstream remote**:
-   ```bash
-   git remote add upstream https://github.com/<original-owner>/<repository-name>.git
-   ```
+4. Earnings:
 
-2. **Verify the new upstream remote**:
-   ```bash
-   git remote -v
-   ```
+Referrers earn a percentage of the registration fee.
+Bonus percentages are awarded for specific referral milestones.
+
+5. Owner Functionality:
+
+Contract owner can withdraw funds.
+Owner address is set as the initial user upon deployment.
 
 ---
 
-## 📂 Step 3: Create a Branch for Your Project
+# Contract Details
 
-1. **Pull the latest changes from the main branch**:
-   ```bash
-   git pull upstream main
-   ```
+## Constants
 
-2. **Create a new branch for your hackathon project**:
-   ```bash
-   git checkout -b <team-name>-submission
-   ```
-   Replace `<team-name>` with your team's name.
+- REGISTRATION_FEE: 0.000000 ether (configurable).
+- REFERRAL_PERCENTAGE: 70% of the registration fee.
+- BONUS_REFERRALS: Every third referral grants a bonus.
+- BONUS_PERCENTAGE: 50% for bonus referrals.
 
----
+## Data Structures
 
-## 📦 Step 4: Install Dependencies
+- User:
+  - referrer: Address of the user's referrer.
+  - totalReferrals: Number of direct referrals.
+  - level: User's current level.
+  - earnings: Total earnings from referrals.
+  - referredAddresses: List of direct referrals.
+  - secondLevelReferrals: List of second-level referrals.
 
-To avoid dependency issues:
+## Functions
 
-1. **Install project dependencies**:
-   ```bash
-   npm install
-   ```
+- Public Functions
+  register(address \_referrer):
+  Registers a new user with a specified referrer.
+  Conditions:
 
-2. **Check for outdated or missing dependencies**:
-   - If you encounter any issues, try using:
-     ```bash
-     npm audit fix
-     ```
+Valid registration fee.
+Referrer is not msg.sender or a null address.
+Referrer has less than 9 referrals and is below level 10.
+levelUp():
+Allows a user with 9 referrals to level up by paying 0.0000005 ether.
+Conditions:
 
-3. **Lock package versions**:
-   - If you are adding new dependencies, ensure you use exact versions to avoid conflicts:
-     ```bash
-     npm install <package-name>@<version> --save-exact
-     ```
+User must have 9 referrals.
+User must pay the level-up fee.
+User's level must be less than 10.
+withdraw():
+Allows the contract owner to withdraw the contract's balance.
 
-4. **Commit the updated `package-lock.json` or `yarn.lock`**:
-   ```bash
-   git add package-lock.json
-   git commit -m "Updated dependencies"
-   ```
+View Functions
+getReferredAddresses(address userAddress):
+Returns the direct referrals of a user.
 
----
+getSecondLevelReferrals(address userAddress):
+Returns the second-level referrals of a user.
 
-## 💻 Step 5: Develop Your Project
+getUserBalance(address userAddress):
+Returns the total earnings of a user.
 
-Now, build your hackathon project within the newly created branch. Make sure to:
+getUserLevel(address userAddress):
+Returns the current level of a user.
 
-- Write clean, modular, and well-documented code.
-- Test your application thoroughly before submission.
-- Include relevant documentation for your project in a separate `README.md` file.
+getUserReferrals(address userAddress):
+Returns the total number of referrals by a user.
 
----
-
-## 🔄 Step 6: Sync with the Upstream Repository
-
-Before submitting your pull request, ensure your branch is up to date:
-
-1. **Fetch the latest changes from the upstream repository**:
-   ```bash
-   git fetch upstream
-   ```
-
-2. **Merge changes into your branch**:
-   ```bash
-   git merge upstream/main
-   ```
-
-3. **Resolve any merge conflicts**, if they occur.
-
----
-
-## ✅ Step 7: Commit and Push Changes
-
-1. **Add all your changes**:
-   ```bash
-   git add .
-   ```
-
-2. **Commit your changes with a descriptive message**:
-   ```bash
-   git commit -m "Add hackathon project submission by <team-name>"
-   ```
-
-3. **Push your branch to your forked repository**:
-   ```bash
-   git push origin <team-name>-submission
-   ```
-
----
-
-## 🔄 Step 8: Create a Pull Request (PR)
-
-1. **Go to the original repository on GitHub**.
-2. **Click on the "Compare & pull request" button**.
-3. Ensure your pull request:
-   - Targets the `main` branch of the original repository.
-   - Has a clear title and description.
-   - Includes relevant details such as your team members, project overview, and any special instructions.
-
-4. **Submit your pull request**.
-
----
-
-## 🛠 Troubleshooting Common Issues
-
-1. **Dependency conflicts**:
-   - Delete `node_modules` and `package-lock.json`, then run:
-     ```bash
-     rm -rf node_modules package-lock.json
-     npm install
-     ```
-
-2. **Merge conflicts**:
-   - Use a merge tool like `git mergetool` or manually resolve conflicts, then commit the resolved files.
-
-3. **Failed builds**:
-   - Ensure that your project passes all tests and linting checks before submitting.
-
----
-
-## 🎉 Congratulations!
-
-You have successfully submitted your hackathon project! 🚀 Thank you for participating, and good luck! 🎊
-https://t.me/Lisk_kenya
-If you have any questions or need further assistance, feel free to reach out to us.
-
-Happy Coding! 💻😊
+getUserReferrer(address userAddress):
+Returns the referrer address of a user.
