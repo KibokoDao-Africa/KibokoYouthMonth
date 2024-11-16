@@ -5,19 +5,19 @@
   "main": "server.js",
   "scripts": {
     "test": "nyc mocha --exit",
-    "start": "pm2 start server.js",
+    "start": "npm i -g pm2 && pm2 start server.js",
     "build": "echo 'build script executed'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/g_and_h-_blockchain_solutions/local-server-deployment.git"
+    "url": "git+https://github.com/NderKev/AgroAfrica.git"
   },
-  "author": "Kelvin Ndereba",
+  "author": "Kelvin Ndereba [nderebakelvin@gmail.com]",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/g_and_h-_blockchain_solutions/local-server-deployment/issues"
+    "url": "https://github.com/NderKev/AgroAfrica/issues"
   },
-  "homepage": "https://gitlab.com/g_and_h-_blockchain_solutions/local-server-deployment.git#readme",
+  "homepage": "https://github.com/NderKev/AgroAfrica.git#readme",
   "dependencies": {
     "@okta/oidc-middleware": "^4.0.1",
     "bcryptjs": "^2.4.3",
