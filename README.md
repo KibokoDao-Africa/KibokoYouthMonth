@@ -97,3 +97,11 @@ Owner address is set as the initial user upon deployment.
 
 - getUserReferrer(address userAddress):
   Returns the referrer address of a user.
+
+## The project is a hybrid project. It has a web2 backend too apart from the smart contract.
+
+- The web2 API is hosted here: https://referal-huy5.onrender.com/users/
+
+- The front end link is: https://referal-front-end.vercel.app/
+
+- The smart contract address is: 0x24aA197fB09477954fFdaa2C0cF5cA812d5dd000
