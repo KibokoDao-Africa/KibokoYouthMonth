@@ -17,6 +17,9 @@ The Referral Smart Contract is a decentralized referral system built on Lisk. It
 - You can see your tier 1 referrals if you have referred someone to the project.
 - You can see your tier 2 referrals if someone that you referred has referred other people.
 
+- screenshot for the user having tier one and tier 2 referrals
+  ![tier 2 referrals](<Screenshot 2024-11-16 at 13.31.15.png>)
+
 ## 📋 Features
 
 1. Registration with Referral:
