@@ -1,180 +1,127 @@
+# Referral Smart Contract
 
-# Hackathon Project Submission Guide 🚀
+## Overview 🚀
 
-Welcome, Hackathon Participants! 🎉 This guide will walk you through the process of submitting your project to this repository using GitHub. We will cover everything from forking the repository to creating a pull request (PR). Follow these steps carefully to ensure your submission is successful and free of dependency issues.
+The Referral Smart Contract is a decentralized referral system built on Lisk. It allows users to register with a referrer, earn rewards for referrals, and progress through levels based on their referral activity. The contract ensures fairness, enforces limits on referrals, and provides a seamless process for managing earnings and leveling up.
 
----
+## Screenshot
 
-## 📋 Prerequisites
+# You must update your profile in the Profile url below for the app to work
 
-Before you begin, ensure you have the following:
-- A GitHub account.
-- Git installed on your local machine.
-- Node.js and npm installed (if applicable for your project).
-- Basic understanding of Git and GitHub.
+- go to https://referal-front-end.vercel.app/profile and connect your wallet then fill in the fields.
+  ![update profile](<Screenshot 2024-11-16 at 13.06.50.png>)
 
----
+- go to https://referal-front-end.vercel.app/ to input the address of the person that referred you.
+  you can use my address: 0x596ce8f4Adda81ea860f9A6ADEEFe19248f46a47
 
-## 🚀 Step 1: Fork the Repository
+  ![input the wallet address that referred you](<Screenshot 2024-11-16 at 13.14.40.png>)
 
-1. **Fork this repository**:
-   - Click on the "Fork" button at the top right corner of this repository page.
-   - This will create a copy of this repository under your GitHub account.
+- You can see your tier 1 referrals if you have referred someone to the project.
+- You can see your tier 2 referrals if someone that you referred has referred other people.
 
-2. **Clone your forked repository**:
-   ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
-   ```
-   Replace `<your-username>` with your GitHub username.
+- screenshot for the user having tier one and tier 2 referrals
+  ![tier 2 referrals](<Screenshot 2024-11-16 at 13.31.15.png>)
 
-3. **Navigate into the cloned directory**:
-   ```bash
-   cd <repository-name>
-   ```
+## 📋 Features
 
----
+1. Registration with Referral:
 
-## 🔄 Step 2: Set Upstream Repository
+Users can register with a valid referrer address.
+Referrers can earn rewards for each successful registration they facilitate.
 
-To keep your fork in sync with the original repository:
+2. Referral System:
 
-1. **Add the original repository as an upstream remote**:
-   ```bash
-   git remote add upstream https://github.com/<original-owner>/<repository-name>.git
-   ```
+Supports tracking of direct and second-level referrals.
+Limits referrers to a maximum of 9 referrals at a time.
 
-2. **Verify the new upstream remote**:
-   ```bash
-   git remote -v
-   ```
+3. Leveling Up:
 
----
+Users can progress through levels by referring 9 people and paying a level-up fee.
+Maximum level is capped at 10.
 
-## 📂 Step 3: Create a Branch for Your Project
+4. Earnings:
 
-1. **Pull the latest changes from the main branch**:
-   ```bash
-   git pull upstream main
-   ```
+Referrers earn a percentage of the registration fee.
+Bonus percentages are awarded for specific referral milestones.
 
-2. **Create a new branch for your hackathon project**:
-   ```bash
-   git checkout -b <team-name>-submission
-   ```
-   Replace `<team-name>` with your team's name.
+5. Owner Functionality:
+
+Contract owner can withdraw funds.
+Owner address is set as the initial user upon deployment.
 
 ---
 
-## 📦 Step 4: Install Dependencies
+# Contract Details
 
-To avoid dependency issues:
+## Constants
 
-1. **Install project dependencies**:
-   ```bash
-   npm install
-   ```
+- REGISTRATION_FEE: 0.000000 ether (configurable).
+- REFERRAL_PERCENTAGE: 70% of the registration fee.
+- BONUS_REFERRALS: Every third referral grants a bonus.
+- BONUS_PERCENTAGE: 50% for bonus referrals.
 
-2. **Check for outdated or missing dependencies**:
-   - If you encounter any issues, try using:
-     ```bash
-     npm audit fix
-     ```
+## Data Structures
 
-3. **Lock package versions**:
-   - If you are adding new dependencies, ensure you use exact versions to avoid conflicts:
-     ```bash
-     npm install <package-name>@<version> --save-exact
-     ```
+- User:
+  - referrer: Address of the user's referrer.
+  - totalReferrals: Number of direct referrals.
+  - level: User's current level.
+  - earnings: Total earnings from referrals.
+  - referredAddresses: List of direct referrals.
+  - secondLevelReferrals: List of second-level referrals.
 
-4. **Commit the updated `package-lock.json` or `yarn.lock`**:
-   ```bash
-   git add package-lock.json
-   git commit -m "Updated dependencies"
-   ```
+## Functions
 
----
+- Public Functions
 
-## 💻 Step 5: Develop Your Project
+  - register(address \_referrer):
+    Registers a new user with a specified referrer.
 
-Now, build your hackathon project within the newly created branch. Make sure to:
+    Conditions:
 
-- Write clean, modular, and well-documented code.
-- Test your application thoroughly before submission.
-- Include relevant documentation for your project in a separate `README.md` file.
+    - Valid registration fee.
+    - Referrer is not msg.sender or a null address.
+    - Referrer has less than 9 referrals and is below level 10.
 
----
+- levelUp():
+  Allows a user with 9 referrals to level up by paying 0.0000005 ether.
+  Conditions:
 
-## 🔄 Step 6: Sync with the Upstream Repository
+  - User must have 9 referrals.
+  - User must pay the level-up fee.
+  - User's level must be less than 10.
 
-Before submitting your pull request, ensure your branch is up to date:
+- withdraw():
+  Allows the contract owner to withdraw the contract's balance.
 
-1. **Fetch the latest changes from the upstream repository**:
-   ```bash
-   git fetch upstream
-   ```
+## View Functions
 
-2. **Merge changes into your branch**:
-   ```bash
-   git merge upstream/main
-   ```
+- getReferredAddresses(address userAddress):
+  Returns the direct referrals of a user.
 
-3. **Resolve any merge conflicts**, if they occur.
+- getSecondLevelReferrals(address userAddress):
+  Returns the second-level referrals of a user.
 
----
+- getUserBalance(address userAddress):
+  Returns the total earnings of a user.
 
-## ✅ Step 7: Commit and Push Changes
+- getUserLevel(address userAddress):
+  Returns the current level of a user.
 
-1. **Add all your changes**:
-   ```bash
-   git add .
-   ```
+- getUserReferrals(address userAddress):
+  Returns the total number of referrals by a user.
 
-2. **Commit your changes with a descriptive message**:
-   ```bash
-   git commit -m "Add hackathon project submission by <team-name>"
-   ```
+- getUserReferrer(address userAddress):
+  Returns the referrer address of a user.
 
-3. **Push your branch to your forked repository**:
-   ```bash
-   git push origin <team-name>-submission
-   ```
+## The project is a hybrid project. It has a web2 backend too apart from the smart contract.
 
----
+- The web2 API is hosted here: https://referal-huy5.onrender.com/users/
 
-## 🔄 Step 8: Create a Pull Request (PR)
+- The front end link is: https://referal-front-end.vercel.app/
 
-1. **Go to the original repository on GitHub**.
-2. **Click on the "Compare & pull request" button**.
-3. Ensure your pull request:
-   - Targets the `main` branch of the original repository.
-   - Has a clear title and description.
-   - Includes relevant details such as your team members, project overview, and any special instructions.
+- The smart contract address is: 0x24aA197fB09477954fFdaa2C0cF5cA812d5dd000
 
-4. **Submit your pull request**.
+- The git repo for the front-end is: https://github.com/AlexMuia31/referal_front_end
 
----
-
-## 🛠 Troubleshooting Common Issues
-
-1. **Dependency conflicts**:
-   - Delete `node_modules` and `package-lock.json`, then run:
-     ```bash
-     rm -rf node_modules package-lock.json
-     npm install
-     ```
-
-2. **Merge conflicts**:
-   - Use a merge tool like `git mergetool` or manually resolve conflicts, then commit the resolved files.
-
-3. **Failed builds**:
-   - Ensure that your project passes all tests and linting checks before submitting.
-
----
-
-## 🎉 Congratulations!
-
-You have successfully submitted your hackathon project! 🚀 Thank you for participating, and good luck! 🎊
-https://t.me/Lisk_kenya
-If you have any questions or need further assistance, feel free to reach out to us.
-
-Happy Coding! 💻😊
+- The backend repo is : https://github.com/AlexMuia31/referal
