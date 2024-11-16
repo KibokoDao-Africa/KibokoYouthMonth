@@ -57,38 +57,43 @@ Owner address is set as the initial user upon deployment.
 ## Functions
 
 - Public Functions
-  register(address \_referrer):
-  Registers a new user with a specified referrer.
+
+  - register(address \_referrer):
+    Registers a new user with a specified referrer.
+
+    Conditions:
+
+    - Valid registration fee.
+    - Referrer is not msg.sender or a null address.
+    - Referrer has less than 9 referrals and is below level 10.
+
+- levelUp():
+  Allows a user with 9 referrals to level up by paying 0.0000005 ether.
   Conditions:
 
-Valid registration fee.
-Referrer is not msg.sender or a null address.
-Referrer has less than 9 referrals and is below level 10.
-levelUp():
-Allows a user with 9 referrals to level up by paying 0.0000005 ether.
-Conditions:
+  - User must have 9 referrals.
+  - User must pay the level-up fee.
+  - User's level must be less than 10.
 
-User must have 9 referrals.
-User must pay the level-up fee.
-User's level must be less than 10.
-withdraw():
-Allows the contract owner to withdraw the contract's balance.
+- withdraw():
+  Allows the contract owner to withdraw the contract's balance.
 
-View Functions
-getReferredAddresses(address userAddress):
-Returns the direct referrals of a user.
+## View Functions
 
-getSecondLevelReferrals(address userAddress):
-Returns the second-level referrals of a user.
+- getReferredAddresses(address userAddress):
+  Returns the direct referrals of a user.
 
-getUserBalance(address userAddress):
-Returns the total earnings of a user.
+- getSecondLevelReferrals(address userAddress):
+  Returns the second-level referrals of a user.
 
-getUserLevel(address userAddress):
-Returns the current level of a user.
+- getUserBalance(address userAddress):
+  Returns the total earnings of a user.
 
-getUserReferrals(address userAddress):
-Returns the total number of referrals by a user.
+- getUserLevel(address userAddress):
+  Returns the current level of a user.
 
-getUserReferrer(address userAddress):
-Returns the referrer address of a user.
+- getUserReferrals(address userAddress):
+  Returns the total number of referrals by a user.
+
+- getUserReferrer(address userAddress):
+  Returns the referrer address of a user.
