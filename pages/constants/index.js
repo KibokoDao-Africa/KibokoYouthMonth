@@ -117,8 +117,8 @@
         {
             title: "Get in touch",
             links: [
-                { name: "customer@nike.com", link: "mailto:customer@nike.com" },
-                { name: "+92554862354", link: "tel:+92554862354" },
+                { name: "Dianga Michael", link: "mailto:diangamichael@gmail.com" },
+                { name: "+254735000014", link: "tel:+254735000014" },
             ],
         },
     ];
