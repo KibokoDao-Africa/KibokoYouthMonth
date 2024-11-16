@@ -1,0 +1,106 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+.tab-set {
+	margin-top: 20px;
+}
+
+.tab-set .state {
+	display: none;
+}
+
+.tab-set .tabs {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.tab-set .tabs .tab {
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+	max-height: 40px;
+	text-align: center;
+}
+
+.tab-set .tabs .tab.active {
+	background-color: rgba(46, 142, 46, 0.3);
+	font-weight: bold;
+	cursor: default;
+}
+
+.tab-set .tabs .panel {
+	display: none;
+	padding: 20px;
+	min-height: 200px;
+	width: 100%;
+	background-color: rgba(46, 142, 46, 0.1);
+}
+
+.tab-set .tabs .panel.active {
+	display: block;
+}
+
+.tab-set .tab {
+	display: inline-block;
+	padding: 10px;
+	background-color: rgba(46, 142, 46, 0.2);
+	cursor: pointer;
+}
+
+.tab-set .tab:hover {
+	background-color: rgba(46, 142, 46, 0.3);
+}
+
+@media all and (min-width: 800px) {
+	.tab-set .tabs {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+	}
+
+	.tabs #tab-one-label {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+	}
+
+	.tabs #tab-two-label {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+	}
+
+	.tabs #tab-three-label {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+	}
+
+	.tabs #tab-one-panel {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+	}
+
+	.tabs #tab-two-panel {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+	}
+
+	.tabs #tab-three-panel {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+	}
+}

@@ -1,0 +1,179 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+/*Typography*/
+
+body.home-page {
+	background: url(../assets/bg.jpg) no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/*Layout*/
+
+body.home-page section {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+/*Navigation*/
+
+body.home-page .nav {
+	background: transparent;
+}
+
+body.home-page .nav.active {
+	background: #2e8e2e;
+}
+
+body.home-page .nav .container {
+	border-bottom: 1px solid white;
+}
+
+body.home-page .nav a {
+	color: white;
+}
+
+body.home-page .nav .sub-nav a {
+	color: #2e8e2e;
+}
+
+body.home-page .nav.active .sub-nav a {
+	color: white;
+}
+
+body.home-page .nav .item svg {
+	fill: white;
+}
+
+/*Tabs*/
+
+body.home-page .tab-set {
+	color: white;
+	min-height: 500px;
+}
+
+body.home-page .tab-set .tabs {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+
+body.home-page .tab-set .tabs label:first-of-type {
+	border-top-left-radius: 10px;
+}
+
+body.home-page .tab-set .tabs label:last-of-type {
+	border-top-right-radius: 10px;
+}
+
+body.home-page .tab-set .tabs .tab {
+	background-color: #015b01;
+}
+
+body.home-page .tab-set .tabs .tab.active {
+	background-color: rgba(46, 142, 46, 1);
+}
+
+body.home-page .tab-set .tabs .panel {
+	background-color: rgba(46, 142, 46, 1);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+body.home-page .tabs #tab-one-label {
+	-webkit-box-ordinal-group: 2;
+	    -ms-flex-order: 1;
+	        order: 1;
+}
+
+body.home-page .tabs #tab-two-label {
+	-webkit-box-ordinal-group: 3;
+	    -ms-flex-order: 2;
+	        order: 2;
+}
+
+body.home-page .tabs #tab-one-panel {
+	-webkit-box-ordinal-group: 4;
+	    -ms-flex-order: 3;
+	        order: 3;
+}
+
+body.home-page .tabs #tab-two-panel {
+	-webkit-box-ordinal-group: 5;
+	    -ms-flex-order: 4;
+	        order: 4;
+}
+
+/*Form*/
+
+body.home-page form input {
+	width: 100%;
+	background-color: white;
+	border: 0;
+	border-radius: 5px;
+}
+
+body.home-page form input.btn {
+	width: 100%;
+}
+
+/*Footer*/
+
+body.home-page footer {
+	color: white;
+}
+
+body.home-page footer .container {
+	border-top: 1px solid white;
+}
+
+body.home-page footer a {
+	color: white;
+}
+
+@media all and (min-width: 800px) {
+
+	/*Layout*/
+
+	body.home-page section .column {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 60%;
+		        flex: 0 0 60%;
+	}
+
+	/*Navigation*/
+
+	body.home-page .nav.active {
+		background: transparent;
+	}
+
+	body.home-page .nav.active .sub-nav a {
+		color: #015b01;
+	}
+
+	/*Form*/
+
+	body.home-page form .form-row .form-group:first-of-type input {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	body.home-page form .form-row .form-group:last-of-type input {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+}
+
+@media all and (min-width: 1200px) {
+
+	/*Layout*/
+
+	body.home-page section .column {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 40%;
+		        flex: 0 0 40%;
+	}
+
+}

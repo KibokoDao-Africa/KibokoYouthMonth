@@ -1,0 +1,235 @@
+'use strict';
+
+const express  = require('express');
+const router  = express.Router();
+const userController = require('../controllers/users');
+const {authenticator, auth, allowCustomer,  allowAdmin, allowSeller} = require('../lib/common');
+const path = require('path');
+const authController = require('../controllers/auth');
+
+//const createAuthToken = require('../models/users');
+// CRUD user
+router.post('/register',  async (req, res) => {
+  const response = await userController.createUser(req.body);
+
+  if (response.success && response.meta) {
+    req.session.email = response.meta.email;
+    req.session.password = req.body.password;
+    req.session.user_roles = response.meta.user_roles;
+  }
+
+  return res.status(response.status).send(response)
+});
+
+router.get('/fetch/:id', authenticator, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  const response = await userController.fetchUser(req.body)
+  return res.status(response.status).send(response)
+});
+
+router.get('/fetchSeller/:id', authenticator, allowSeller, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  const response = await userController.fetchSeller(req.body)
+  return res.status(response.status).send(response)
+});
+
+router.get('/fetchSellers', authenticator, allowAdmin, async (req, res) => {
+  const response = await userController.fetchAllSellers()
+  return res.status(response.status).send(response)
+});
+
+// authenticator
+router.post('/login',  async (req, res) => {
+  const response = await userController.loginUser(req.body);
+  if (response.success && response.meta) {
+    req.session.email = response.meta.email;
+    req.session.password = req.body.password;
+    req.session.user_roles = response.meta.user_roles;
+  }
+
+  return res.status(response.status).send(response)
+  if (req.session.user_roles.indexOf('admin') >= 0) {
+        //res.status(response.status).send(response)
+        //res.sendFile(path.join(__dirname, '../pages' , 'add_category.html'));
+        res.redirect('/admin/profile/:id/');
+
+  }
+  else if (req.session.user_roles.indexOf('seller') >= 0) {
+       res.redirect('/seller/profile/:id/');
+    }
+  else if (req.session.user_roles.indexOf('customer') >= 0) {
+      res.redirect('/customer/profile/:id/');
+    }
+  else {
+      //res.status(401).send(response);
+      res.redirect('/home');
+    }
+    //res.redirect('/profile/:id/')
+
+});
+
+router.post('/logout', authenticator, async (req, res) => {
+  req.session.destroy(err => {
+    res.clearCookie('sid')
+    return res.status(200).send('loggedout');
+  })
+});
+
+router.post('/permission', authenticator, allowAdmin,  async (req, res) => {
+  const response = await userController.createUserPermission(req.body);
+  return res.status(response.status).send(response)
+});
+
+router.post('/role', authenticator, allowAdmin, async (req, res) => {
+  const response = await userController.createUserRole(req.body);
+  return res.status(response.status).send(response)
+});
+
+router.post('/seller', authenticator, async (req, res) => {
+  const response = await userController.createSeller(req.body)
+  return res.status(response.status).send(response)
+})
+
+router.post('/updatePassword', authenticator, async (req, res) => {
+  const response = await userController.updatePassword(req.body)
+  return res.status(response.status).send(response)
+})
+
+router.post('/updateSeller', authenticator, allowSeller, async (req, res) => {
+  const response = await userController.updateSeller(req.body)
+  return res.status(response.status).send(response)
+})
+
+router.post('/updateProfile', authenticator, allowCustomer, async (req, res) => {
+  const response = await userController.updateProfile(req.body)
+  return res.status(response.status).send(response)
+})
+
+router.post('/createToken', authenticator, async (req, res) => {
+  const response = await userController.createToken(req.body)
+  return res.status(response.status).send(response)
+})
+
+/** router.post('/updateToken', async (req, res) => {
+  const response = await userController.updateToken(req.body)
+  return res.status(response.status).send(response)
+  //res.redirect('/profile/:id/');
+}) **/
+
+router.get('/home', function (req, res) => {
+  /req.body.id = Number(req.params.id);
+  //const response = await userController.fetchSeller(req.body)
+  res.sendFile(path.join(__dirname, '../pages' , 'index.html'));
+});
+
+router.get('/seller/profile/:id', authenticator, allowSeller, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  //const response = await userController.fetchSeller(req.body)
+  res.sendFile(path.join(__dirname, '../pages' , 'seller_profile.html'));
+});
+
+router.get('/customer/profile/:id/', authenticator, allowCustomer, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  //req.body.customer = req.params.
+  //const response = await userController.fetchUser(req.body)
+  res.sendFile(path.join(__dirname, '../pages' , 'profile.html'));
+});
+
+router.get('/admin/profile/:id', authenticator, allowAdmin, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  //req.body.customer = req.params.
+  //const response = await userController.fetchUser(req.body)
+  res.sendFile(path.join(__dirname, '../pages' , 'add_category.html'));
+});
+
+router.get('/customer/profile/:id/update', authenticator, allowCustomer, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'complete_profile.html'));
+});
+
+router.get('/customer/:id/addToCart', authenticator, allowCustomer, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'kidney_beans.html'));
+});
+
+router.get('/customer/:id/products', authenticator, allowCustomer, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'products.html'));
+});
+
+router.get('/customer/:id/cart', authenticator, allowCustomer, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'carts.html'));
+});
+
+router.get('/seller/:id/createProduct', authenticator, allowSeller, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'add_product.html'));
+});
+
+router.get('/admin/:id/addCategory', authenticator, allowCustomer, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'add_category.html'));
+});
+
+router.get('/admin/:id/addWarehouse', authenticator, allowAdmin, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'add_warehouse.html'));
+});
+
+
+router.get('/users', authenticator, allowAdmin,  async (req, res, next) => {
+  const response = await userController.fetchAllUsers();
+  return res.status(response.status).send(response)
+})
+
+router.get('/verify/:token', async (req, res, next) => {
+  var token = req.params.token;
+  const response = await authController.verifyToken(token);
+  return res.status(response.status).send(response)
+  res.redirect('/home');
+})
+
+router.post('/sendAuth', async (req, res, next) => {
+  const response = await authController.sendVerification(req.body);
+  return res.status(response.status).send(response);
+})
+
+router.post('/generateAuth', async (req, res, next) => {
+  const response = await authController.generateToken(req.body);
+  return res.status(response.status).send(response);
+})
+
+router.get('/seller/:id/updateSeller', authenticator, allowSeller, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  res.sendFile(path.join(__dirname, '../pages' , 'update_seller_profile.html'));
+});
+
+/** router.get('/profile/:id/', authenticator, auth, async (req, res) => {
+  req.body.id = Number(req.params.id);
+  console.log(req.body.id );
+  //const response = await userController.fetchUser(req.body)
+  //console.log(req.session.user_roles.indexOf('customer'));
+  if (req.session.user_roles.indexOf('admin') >= 0) {
+        //res.status(response.status).send(response)
+        res.sendFile(path.join(__dirname, '../pages' , 'add_category.html'));
+
+  }
+  else if (req.session.user_roles.indexOf('seller') >= 0) {
+       //res.status(response.status).send(response)
+       res.sendFile(path.join(__dirname, '../pages' , 'seller_profile.html'));
+       //return res.status(response.status).send(response)
+       //res.redirect('/profile/:id/seller/');
+    }
+  else if (req.session.user_roles.indexOf('customer') >= 0) {
+      //res.status(response.status).send(response)
+      res.sendFile(path.join(__dirname, '../pages' , 'profile.html'));
+    }
+  else {
+      //res.status(401).send(response);
+      return res.sendFile(path.join(__dirname, '../pages' , 'index.html'));
+    }
+   //return res.status(response.status).send(response);
+}); **/
+
+module.exports = router;

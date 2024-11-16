@@ -1,0 +1,93 @@
+.table-responsive {
+	overflow-x:auto;
+	margin: 10px;
+}
+
+table.cart {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	background-color: white;
+	border: 1px solid #ddd;
+}
+
+table.cart th, table.cart td {
+	text-align: center;
+	padding: 15px 10px;
+	border: 1px solid #2e8e2e;
+}
+
+table.cart th {
+	background-color: #2e8e2e;
+	color: white;
+	font-size: 18px;
+}
+
+table.cart svg {
+	width: 20px;
+	height: 20px;
+	fill: #ff0000;
+}
+
+table.cart img {
+	max-width: 100px;
+	height: auto;
+}
+
+table.cart .quantity {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: inline-flex;
+}
+
+table.cart .quantity input {
+	padding: 5px;
+	width: 60px;
+	height: 32px;
+	background-color: transparent;
+	border: 1px solid #676767;
+	border-radius: 0;
+	font-size: 16px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+table.cart .quantity span {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 30px;
+	height: 32px;
+	border: 1px solid #676767;
+	font-size: 20px;
+	cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+table.cart .quantity span:first-of-type {
+	border-right: 0;
+}
+
+table.cart .quantity span:last-of-type {
+	border-left: 0;
+}
+
+table.cart .total {
+	background-color: #2e8e2e;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+table.cart .right-align {
+	text-align: right;
+}
