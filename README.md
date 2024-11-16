@@ -4,7 +4,18 @@
 
 The Referral Smart Contract is a decentralized referral system built on Lisk. It allows users to register with a referrer, earn rewards for referrals, and progress through levels based on their referral activity. The contract ensures fairness, enforces limits on referrals, and provides a seamless process for managing earnings and leveling up.
 
----
+## Screenshot
+
+- go to https://referal-front-end.vercel.app/profile and connect your wallet then fill in the fields.
+  ![update profile](<Screenshot 2024-11-16 at 13.06.50.png>)
+
+- go to https://referal-front-end.vercel.app/ to input the address of the person that referred you.
+  you can use my address: 0x596ce8f4Adda81ea860f9A6ADEEFe19248f46a47
+
+  ![input the wallet address that referred you](<Screenshot 2024-11-16 at 13.14.40.png>)
+
+- You can see your tier 1 referrals if you have referred someone to the project.
+- You can see your tier 2 referrals if someone that you referred has referred other people.
 
 ## 📋 Features
 
@@ -105,3 +116,7 @@ Owner address is set as the initial user upon deployment.
 - The front end link is: https://referal-front-end.vercel.app/
 
 - The smart contract address is: 0x24aA197fB09477954fFdaa2C0cF5cA812d5dd000
+
+- The git repo for the front-end is: https://github.com/AlexMuia31/referal_front_end
+
+- The backend repo is : https://github.com/AlexMuia31/referal
