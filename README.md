@@ -6,6 +6,8 @@ The Referral Smart Contract is a decentralized referral system built on Lisk. It
 
 ## Screenshot
 
+# You must update your profile in the Profile url below for the app to work
+
 - go to https://referal-front-end.vercel.app/profile and connect your wallet then fill in the fields.
   ![update profile](<Screenshot 2024-11-16 at 13.06.50.png>)
 
