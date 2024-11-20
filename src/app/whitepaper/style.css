@@ -1,0 +1,234 @@
+.whitepaper {
+    position: relative;
+    min-height: 200vh;
+    background: linear-gradient(180deg, #020321, #140221);
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.academic-achievement,
+.timeline-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.timeline-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.timeline-line {
+    position: absolute;
+    width: 4px;
+    height: 100%;            /* Make sure this is full height */
+    background-color: #4a4ab1;
+    top: 10;
+    bottom: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.timeline-item {
+    flex-basis: calc(50% - 50px); /* Each item will take up 50% of the container width minus the gap */
+    box-sizing: border-box;  
+    display: flex;
+    align-items: center;  /* Center align items vertically */
+    max-height: 200px;
+    position: relative;   /* Allow absolute positioning of children */
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+/* Hover effect */
+.timeline-item:hover .timeline-content {
+    transform: translateY(-10px) rotateY(10deg); /* Move up and rotate */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.timeline-content {
+    position: relative;
+    width: 500px;
+    padding: 20px;
+    background: linear-gradient(145deg, #1f1f3f, #29295c);
+    border-radius: 8px;
+    border: 1px solid #4a4ab1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    border-right: 2px solid linear-gradient(145deg, #09f5f5, #29295c);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #4a4ab1;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%); /* Center the dot vertically */
+    z-index: 1000;
+    transition: transform 0.3s ease; 
+}
+
+/* Optional: Enhance the dot effect on hover */
+.timeline-item:hover .timeline-dot {
+    transform: translateY(-50%) scale(1.5); /* Slightly scale the dot */
+}
+
+/* Before pseudo-element for even timeline items */
+.timeline-item:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(to bottom, #4a4ab1, #1f1f3f); 
+    border-radius: 5px; /* Make it rounded */
+    top: 50%;
+    left: -60px; /* Position it to the left of the timeline dot */
+    transform: translateY(-50%); /* Center it vertically */
+}
+
+.timeline-item:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background-color: #4a4ab1;
+    border-radius: 5px; /* Make it rounded */
+    top: 50%;
+    right: -60px; /* Position it to the left of the timeline dot */
+    transform: translateY(-50%); /* Center it vertically */
+}
+
+.timeline-item:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 135px;
+    border:5px solid #4a4ab1;
+    border-radius: 5px; /* Make it rounded */
+    top: -10;
+    right: -8px; /* Position it to the left of the timeline dot */
+}
+
+
+.timeline-item:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 135px;
+    border:5px solid #4a4ab1;
+    border-radius: 5px; /* Make it rounded */
+    top: -10;
+    left: -8px; /* Position it to the left of the timeline dot */
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -60px; /* Position to the left of the timeline line */
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -60px; /* Position to the right of the timeline line */
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+}
+
+.timeline-content h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #4a4ab1;
+}
+
+.timeline-content .month {
+    font-size: 1em;
+    color: #ffffff99;
+    margin-top: 5px;
+}
+
+.timeline-content p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #cfcfdc;
+}
+
+
+.timeline-item:nth-child(2) {
+    transform: translateY(50%);
+}
+
+.timeline-item:nth-child(3){
+    transform: translateY(50%);
+}
+
+.timeline-item:nth-child(4){
+    transform: translateY(100%);
+}
+
+.timeline-item:nth-child(5){
+    transform: translateY(100%);
+}
+
+.timeline-item:nth-child(6){
+    transform: translateY(150%);
+}
+
+
+/* Drawer styles */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 470px; /* Adjust width as needed */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent dark background */
+    transition: right 0.4s ease;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.drawer.open {
+    right: 0;
+}
+
+.drawer-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.close-button {
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.drawer::-webkit-scrollbar {
+    width: 1px;
+}
+
+.drawer::-webkit-scrollbar-thumb {
+    background-color: #4a4ab1;
+    border-radius: 10px;
+}
+
+.drawer::-webkit-scrollbar-track {
+    background-color: #1f1f3f;
+}
+
+

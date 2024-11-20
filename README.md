@@ -1,180 +1,116 @@
+# Credentify 🎓🏆
 
-# Hackathon Project Submission Guide 🚀
+## Overview
 
-Welcome, Hackathon Participants! 🎉 This guide will walk you through the process of submitting your project to this repository using GitHub. We will cover everything from forking the repository to creating a pull request (PR). Follow these steps carefully to ensure your submission is successful and free of dependency issues.
+Credentify is a platform that compliments credential management and professional identity verification through blockchain technology. By leveraging NFTs (Non-Fungible Tokens) and AI, Credentify enables educational institutions to issue digital credentials while empowering students to create dynamic, blockchain-backed portfolios.
 
----
+## Key Features
 
-## 📋 Prerequisites
+### Digital Credential Issuance
+- Issue academic certificates as NFTs
+- Deployed on Lisk Blockchain
+- Secure, verifiable, and immutable credential records
 
-Before you begin, ensure you have the following:
-- A GitHub account.
-- Git installed on your local machine.
-- Node.js and npm installed (if applicable for your project).
-- Basic understanding of Git and GitHub.
+### AI-Powered Portfolio Creation
+- Generate professional resumes and CVs using AI
+- Mint portfolio documents as NFTs
+- Create a comprehensive digital professional identity
 
----
+## Technology Stack
 
-## 🚀 Step 1: Fork the Repository
+### Blockchain
+- Blockchain Platform: Lisk
+- NFT Standard: Implemented with Lisk-compatible smart contracts
+- Token Bound Accounts: ERC-6551 inspired implementation
 
-1. **Fork this repository**:
-   - Click on the "Fork" button at the top right corner of this repository page.
-   - This will create a copy of this repository under your GitHub account.
+### AI Technologies
+- AI-driven resume and portfolio generation
+- Intelligent document creation and formatting
 
-2. **Clone your forked repository**:
-   ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
-   ```
-   Replace `<your-username>` with your GitHub username.
+## Getting Started
 
-3. **Navigate into the cloned directory**:
-   ```bash
-   cd <repository-name>
-   ```
+### Prerequisites
+- Lisk-compatible wallet
+- Modern web browser
+- Wallet supporting Lisk network
+- Yarn package manager installed
 
----
+### Installation
 
-## 🔄 Step 2: Set Upstream Repository
+1. Clone the repository
+bash
+git clone https://github.com/FadhilMulinya/CREDENTIFY.git
+cd CREDENTIFY
 
-To keep your fork in sync with the original repository:
 
-1. **Add the original repository as an upstream remote**:
-   ```bash
-   git remote add upstream https://github.com/<original-owner>/<repository-name>.git
-   ```
+2. Install dependencies
+bash
+yarn install
 
-2. **Verify the new upstream remote**:
-   ```bash
-   git remote -v
-   ```
 
----
+3. Configure Lisk Network
+- Add Lisk network configuration
+- Set up wallet connection
+- Configure smart contract addresses
 
-## 📂 Step 3: Create a Branch for Your Project
+### Running the Project
+bash
+yarn start
 
-1. **Pull the latest changes from the main branch**:
-   ```bash
-   git pull upstream main
-   ```
 
-2. **Create a new branch for your hackathon project**:
-   ```bash
-   git checkout -b <team-name>-submission
-   ```
-   Replace `<team-name>` with your team's name.
+### Other Useful Yarn Commands
+bash
+# Install a new package
+yarn add [package-name]
 
----
+# Run tests
+yarn test
 
-## 📦 Step 4: Install Dependencies
+# Build for production
+yarn build
 
-To avoid dependency issues:
 
-1. **Install project dependencies**:
-   ```bash
-   npm install
-   ```
+## Blockchain Deployment Details
+- *Network*: Lisk
+- *Smart Contract Address*: [0x58307194D111f5AF3E784528444f034e6bFf30d9]
+- *Network Type*: [Testnet]
 
-2. **Check for outdated or missing dependencies**:
-   - If you encounter any issues, try using:
-     ```bash
-     npm audit fix
-     ```
+## Roadmap
+- [x] Lisk Blockchain Deployment
+- [x] NFT Credential Issuance
+- [ ] Enhanced ERC-6551 Token Bound Accounts Integration
+- [ ] Advanced AI Portfolio Generation
+- [ ] Multi-Chain Support Expansion
 
-3. **Lock package versions**:
-   - If you are adding new dependencies, ensure you use exact versions to avoid conflicts:
-     ```bash
-     npm install <package-name>@<version> --save-exact
-     ```
+## Contributing
+We welcome contributions! 
 
-4. **Commit the updated `package-lock.json` or `yarn.lock`**:
-   ```bash
-   git add package-lock.json
-   git commit -m "Updated dependencies"
-   ```
+### Setup for Contributors
+1. Fork the repository
+2. Clone your fork
+3. Install dependencies with yarn install
+4. Create a new branch for your feature
+5. Make your changes
+6. Run tests with yarn test
+7. Submit a pull request
 
----
+Please see CONTRIBUTING.md for more details on our code of conduct and contribution process.
 
-## 💻 Step 5: Develop Your Project
+## Technical Challenges Solved
+- Blockchain-based credential verification
+- Decentralized portfolio management
+- AI-powered professional identity creation
 
-Now, build your hackathon project within the newly created branch. Make sure to:
+## License
+This project is licensed under [INSERT LICENSE] - see the LICENSE.md file for details.
 
-- Write clean, modular, and well-documented code.
-- Test your application thoroughly before submission.
-- Include relevant documentation for your project in a separate `README.md` file.
+## Contact
+- Project Lead: Fadhil Mulinya
+- Email: mulinyafadhl@gmail.com
+- Project Link: https://github.com/FadhilMulinya/CREDENTIFY
 
----
 
-## 🔄 Step 6: Sync with the Upstream Repository
 
-Before submitting your pull request, ensure your branch is up to date:
-
-1. **Fetch the latest changes from the upstream repository**:
-   ```bash
-   git fetch upstream
-   ```
-
-2. **Merge changes into your branch**:
-   ```bash
-   git merge upstream/main
-   ```
-
-3. **Resolve any merge conflicts**, if they occur.
-
----
-
-## ✅ Step 7: Commit and Push Changes
-
-1. **Add all your changes**:
-   ```bash
-   git add .
-   ```
-
-2. **Commit your changes with a descriptive message**:
-   ```bash
-   git commit -m "Add hackathon project submission by <team-name>"
-   ```
-
-3. **Push your branch to your forked repository**:
-   ```bash
-   git push origin <team-name>-submission
-   ```
-
----
-
-## 🔄 Step 8: Create a Pull Request (PR)
-
-1. **Go to the original repository on GitHub**.
-2. **Click on the "Compare & pull request" button**.
-3. Ensure your pull request:
-   - Targets the `main` branch of the original repository.
-   - Has a clear title and description.
-   - Includes relevant details such as your team members, project overview, and any special instructions.
-
-4. **Submit your pull request**.
-
----
-
-## 🛠 Troubleshooting Common Issues
-
-1. **Dependency conflicts**:
-   - Delete `node_modules` and `package-lock.json`, then run:
-     ```bash
-     rm -rf node_modules package-lock.json
-     npm install
-     ```
-
-2. **Merge conflicts**:
-   - Use a merge tool like `git mergetool` or manually resolve conflicts, then commit the resolved files.
-
-3. **Failed builds**:
-   - Ensure that your project passes all tests and linting checks before submitting.
-
----
-
-## 🎉 Congratulations!
-
-You have successfully submitted your hackathon project! 🚀 Thank you for participating, and good luck! 🎊
-https://t.me/Lisk_kenya
-If you have any questions or need further assistance, feel free to reach out to us.
-
-Happy Coding! 💻😊
+## Development Tips
+- Ensure you have the latest version of Yarn installed
+- Use yarn upgrade-interactive --latest to manage package updates
